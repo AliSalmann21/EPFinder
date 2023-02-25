@@ -17,3 +17,10 @@ Inside the function, we create a new PE object using the pefile library and pass
 We then retrieve the Entry Point from the PE file's OPTIONAL_HEADER field using the AddressOfEntryPoint properties, respectively.
 
 Finally, we return a tuple containing the Entry Point as integer values.
+
+
+Results + Evidence:
+
+![Screenshot_2023-02-24_19-10-26](https://user-images.githubusercontent.com/81095544/221359878-23699079-52ec-4689-9dfe-7daaf3aa7dba.png)
+
+![Screenshot_2023-02-24_19-11-54](https://user-images.githubusercontent.com/81095544/221359917-680a6195-9a56-48c6-a895-d0060119a968.png)
