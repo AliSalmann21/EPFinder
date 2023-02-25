@@ -1,26 +1,41 @@
-# EPFinder
-Find the Entry Point of any PE File using the terminal
+# PE Entry Point Extractor
+
+This Python script extracts the Entry Point of a Portable Executable (PE) file using the pefile library.
+
+## Requirements
+
+- Python 3.x
+- pefile library
+
+## Usage
+
+To run the script, use the following command:
+
+python pe_entry_point_extractor.py <file_path>
 
 
-This script uses the pefile library to load the specified PE file and access its header fields. The get_entry_points function returns a tuple containing the Entry Point and Original Entry Point as integer values. The if __name__ == "__main__": block demonstrates how to call the function and print out the results.
+Replace `<file_path>` with the path to the PE file you want to analyze.
 
-Note that the script assumes that the pefile library is already installed. You can install it using pip by running pip install pefile. Also, make sure to replace "path/to/your/exe/file" with the actual path to your executable file.
+If the file path contains spaces, enclose it in double quotes:
 
-Detailed Steps:
-
-First, we import the pefile library, which is a Python module for parsing and analyzing Portable Executable (PE) files.
-
-Next, we define a function called get_entry_points that takes a single argument, file_path, which is the path to the PE file we want to analyze.
-
-Inside the function, we create a new PE object using the pefile library and pass in the file path as an argument. This loads the PE file into memory and allows us to access its header information.
-
-We then retrieve the Entry Point from the PE file's OPTIONAL_HEADER field using the AddressOfEntryPoint properties, respectively.
-
-Finally, we return a tuple containing the Entry Point as integer values.
+python pe_entry_point_extractor.py "C:\Program Files\My App\my_app.exe"
 
 
-Results + Evidence:
+The script will print the Entry Point of the file in hexadecimal format.
 
-![Screenshot_2023-02-24_19-10-26](https://user-images.githubusercontent.com/81095544/221359878-23699079-52ec-4689-9dfe-7daaf3aa7dba.png)
+## Example
 
-![Screenshot_2023-02-24_19-11-54](https://user-images.githubusercontent.com/81095544/221359917-680a6195-9a56-48c6-a895-d0060119a968.png)
+python pe_entry_point_extractor.py C:\Windows\System32\kernel32.dll
+
+Entry Point: 0x0000B710
+
+
+## License
+
+This script is licensed under the MIT License. See LICENSE for more information.
+
+## Credits
+
+The script was developed by Ali Salman. If you have any questions or feedback, please contact me at alielhadi.salman@lau.edu. 
+
+The pefile library is developed by Ero Carrera. See https://github.com/erocarrera/pefile for more information.
